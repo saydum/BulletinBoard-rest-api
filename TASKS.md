@@ -55,8 +55,8 @@
 
 # TASKS
 **Backend**
-- [ ] init project backend
-- [ ] decomposition tasks
+- [x] init project backend
+- [x] decomposition tasks
 
 ## 1. Create
 - [ ] create model
