@@ -41,7 +41,7 @@
 > Срок выполнения задания: не более 2х дней от момента получения.
 
 # Время:
-- POMO (1 = 1ч 30м): | + 40m
+- POMO (1 = 1ч 30м): | + 40m, |
 - Оцененное время: 4.5ч
 - Фактически затраченное время: ??
 
@@ -73,17 +73,17 @@
 - [x] test for method create
 
 ## 2. Index
-- [ ] method index get Bulletins
+- [x] method index get Bulletins
     - name
     - first image
     - price
     - HTTP CODE
   
-- [ ] paginate
-- [ ] filter by price and sorter (ASC/DESC)
-- [ ] filter by date and sorter (ASC/DESC)
-- [ ] create Exception
-- [ ] test for method show
+- [x] paginate
+- [x] filter by price and sorter (ASC/DESC)
+- [x] filter by date and sorter (ASC/DESC)
+- [x] create Exception
+- [x] test for method show
 
 ## 3. Show
 - [ ] method get by id
@@ -99,6 +99,10 @@
 
 - [ ] testing rest api
 
+## 5. Other
+- [ ] create README
+- [ ] create repository
+
 ## 4. FRONTEND
 - [ ] create app vue.js and install dependents(bootstrap, axios)
 - [ ] get all Bulletins
@@ -107,7 +111,3 @@
 - [ ] get Bulletin by id
 - [ ] creat Bulletin
 
-## 5. Other
-- [ ] create README
-- [ ] create repository
-- [ ] Send TZ
