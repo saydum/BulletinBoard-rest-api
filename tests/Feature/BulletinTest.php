@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Bulletin;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -56,5 +57,25 @@ class BulletinTest extends TestCase
 
         $response->assertStatus(422);
         $response->assertJsonValidationErrors(['images']);
+    }
+
+    public function test_bulletins_pagination_and_sorting(): void
+    {
+        Bulletin::factory()->count(15)->create();
+
+        $response = $this->getJson(route('bulletins.index', [
+            'sortBy' => 'price',
+            'sortDirection' => 'asc',
+            'page' => 1,
+            'per_page' => 10
+        ]));
+
+        $response->assertStatus(200);
+        $responseData = $response->json();
+
+        $this->assertEquals(1, $responseData['meta']['current_page']);
+        $this->assertEquals(15, $responseData['meta']['total']);
+        $this->assertEquals(10, $responseData['meta']['per_page']);
+        $this->assertEquals(2, $responseData['meta']['last_page']);
     }
 }

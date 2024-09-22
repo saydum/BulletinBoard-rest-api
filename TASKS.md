@@ -41,7 +41,7 @@
 > Срок выполнения задания: не более 2х дней от момента получения.
 
 # Время:
-- POMO (1 = 1ч 30м):
+- POMO (1 = 1ч 30м): | + 40m
 - Оцененное время: 4.5ч
 - Фактически затраченное время: ??
 
@@ -55,20 +55,22 @@
 
 # TASKS
 **Backend**
+## Init
 - [x] init project backend
 - [x] decomposition tasks
 
 ## 1. Create
-- [ ] create model
+- [x] create model
+    **Result**
     - ID
     - HTTP CODE
-- [ ] Validate data
+- [x] Validate data
   - не больше 3 ссылок на фото,
   - описание не больше 1000 символов,
   - название не больше 200 символов.
 
-- [ ] create Exception
-- [ ] test for method create
+- [x] create Exception
+- [x] test for method create
 
 ## 2. Index
 - [ ] method index get Bulletins
