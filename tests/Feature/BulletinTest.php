@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
+use Tests\TestCase;
 use App\Models\Bulletin;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 
 class BulletinTest extends TestCase
 {
@@ -77,5 +77,20 @@ class BulletinTest extends TestCase
         $this->assertEquals(15, $responseData['meta']['total']);
         $this->assertEquals(10, $responseData['meta']['per_page']);
         $this->assertEquals(2, $responseData['meta']['last_page']);
+    }
+
+    public function test_get_bulletin_by_id(): void
+    {
+        $bulletin = Bulletin::factory()->create();
+
+        $response = $this->getJson(route('bulletins.show', $bulletin->id));
+
+        $response->assertStatus(200);
+
+        $responseData = $response->json();
+
+        $this->assertEquals($bulletin->name, $responseData['name']);
+        $this->assertEquals(json_decode($bulletin->images)[0], $responseData['main_image']);
+        $this->assertEquals($bulletin->price, $responseData['price']);
     }
 }

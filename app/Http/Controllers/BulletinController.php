@@ -16,8 +16,7 @@ class BulletinController extends Controller
     public function __construct(
         protected BulletinService $bulletinService
     )
-    {
-    }
+    {}
 
     public function index(IndexBulletinRequest $request): JsonResponse
     {
@@ -35,6 +34,15 @@ class BulletinController extends Controller
                 'per_page' => $bulletins->perPage(),
                 'last_page' => $bulletins->lastPage(),
             ],
+        ]);
+    }
+
+    public function show(Bulletin $bulletin): JsonResponse
+    {
+        return response()->json([
+            'name' => $bulletin->name,
+            'main_image' => json_decode($bulletin->images, true)[0] ?? null,
+            'price' => $bulletin->price,
         ]);
     }
 
